@@ -39,3 +39,12 @@ resource "aws_s3_bucket" "tf_dev_bucket" {
     Environment = "Dev"
   }
 }
+
+resource "aws_s3_bucket" "tf_prod_bucket" {
+  bucket = "my-tf-prod-bucket-${random_string.bucket_suffix.result}"
+
+  tags = {
+    Name        = "My bucket103"
+    Environment = "Prod"
+  }
+}
