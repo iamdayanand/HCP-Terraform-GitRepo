@@ -48,12 +48,3 @@ resource "aws_s3_bucket" "tf_prod_bucket" {
     Environment = "Prod"
   }
 }
-
-resource "aws_s3_bucket" "tf_prod_bucket" {
-  bucket = "my-tf-preprod-bucket-${random_string.bucket_suffix.result}"
-
-  tags = {
-    Name        = "My bucket104"
-    Environment = "PreProd"
-  }
-}
